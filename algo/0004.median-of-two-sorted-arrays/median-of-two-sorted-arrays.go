@@ -22,7 +22,6 @@ func sliceMerge(a []int, b []int) []int {
 	aLen, i := len(a), 0
 	bLen, j := len(b), 0
 	c := make([]int, aLen+bLen)
-
 	for n := 0; n < aLen+bLen; n++ {
 		if i == aLen || (i < aLen && j < bLen && a[i] > b[j]) {
 			c[n] = b[j]
@@ -34,6 +33,32 @@ func sliceMerge(a []int, b []int) []int {
 			c[n] = a[i]
 			i++
 		}
+	}
+
+	return c
+}
+
+// a b is sorted array
+func combineSort(a, b []int) []int {
+	c := []int{}
+	//i, j := 0
+	var i, j int
+	for i < len(a) && j < len(b) {
+		if a[i] <= b[j] {
+			c = append(c, a[i])
+			i++
+		} else {
+			c = append(c, b[j])
+			j++
+		}
+	}
+
+	if i == len(a) {
+		c = append(c, b[j:]...)
+	}
+
+	if j == len(b) {
+		c = append(c, a[i:]...)
 	}
 
 	return c
