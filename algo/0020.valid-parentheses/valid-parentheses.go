@@ -9,6 +9,7 @@ func isValid(s string) bool {
 	if l%2 == 1 {
 		return false
 	}
+
 	var stack []byte
 
 	for i := 0; i < l; i++ {
