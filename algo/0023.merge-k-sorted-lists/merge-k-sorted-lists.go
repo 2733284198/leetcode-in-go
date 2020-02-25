@@ -1,13 +1,73 @@
 package problem0023
 
+import "container/heap"
+
 // ListNode Definition for singly-linked list.
 type ListNode struct {
 	Val  int
 	Next *ListNode
 }
 
-func mergeKLists(lists []*ListNode) *ListNode {
+// PQ lists
+type PQ []*ListNode
 
+func (p PQ) Len() int { return len(p) }
+
+func (p PQ) Swap(i, j int) {
+	p[i], p[j] = p[j], p[i]
+}
+
+func (p PQ) Less(i, j int) bool {
+	return p[i].Val < p[j].Val
+}
+
+// Push PQ
+func (p *PQ) Push(x interface{}) {
+	node := x.(*ListNode)
+	*p = append(*p, node)
+}
+
+// Pop PQ
+func (p *PQ) Pop() interface{} {
+	old := *p
+	n := len(old)
+	item := old[n-1]
+	*p = old[0 : n-1]
+	return item
+}
+
+func mergeKLists(lists []*ListNode) *ListNode {
+	h := &ListNode{
+		Val:  -1,
+		Next: nil,
+	}
+	t := h
+	if len(lists) == 0 {
+		return h.Next
+	}
+
+	pq := make(PQ, 0)
+	for i := range lists {
+		if lists[i] != nil {
+			pq = append(pq, lists[i])
+		}
+	}
+	heap.Init(&pq)
+
+	for len(pq) > 0 {
+		item := heap.Pop(&pq).(*ListNode)
+		next := item.Next
+
+		item.Next = t.Next
+		t.Next = item
+		t = item
+
+		if next != nil {
+			heap.Push(&pq, next)
+		}
+	}
+
+	return h.Next
 }
 
 func mergeKListsFail(lists []*ListNode) *ListNode {
