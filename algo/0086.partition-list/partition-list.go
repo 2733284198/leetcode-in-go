@@ -7,9 +7,18 @@ type ListNode struct {
 }
 
 func partition(head *ListNode, x int) *ListNode {
-	var prev, tail *ListNode
+	prev := &ListNode{
+		Val:  -1,
+		Next: nil,
+	}
 
-	prevNode, tailNode := prev, tail
+	tail := &ListNode{
+		Val:  -1,
+		Next: nil,
+	}
+
+	prevNode := prev
+	tailNode := tail
 
 	for head != nil {
 		if head.Val < x {
@@ -25,5 +34,5 @@ func partition(head *ListNode, x int) *ListNode {
 	tailNode.Next = nil
 	prevNode.Next = tail.Next
 
-	return prevNode.Next
+	return prev.Next
 }
