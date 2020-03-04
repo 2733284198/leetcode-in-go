@@ -6,4 +6,5 @@ func nextPermutation(nums []int) {
 		return
 	}
 
+	
 }
