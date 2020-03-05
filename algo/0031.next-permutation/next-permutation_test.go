@@ -29,7 +29,8 @@ func Test_NextPermutation(t *testing.T) {
 	ast := assert.New(t)
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
-		ast.Equal(q.ans, nextPermutation(q.para), "输入：%v", q)
+		nextPermutation(q.para)
+		ast.Equal(q.ans, q.para, "输入：%v", q)
 	}
 }
 
