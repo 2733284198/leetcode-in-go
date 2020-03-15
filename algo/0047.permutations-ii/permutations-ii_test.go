@@ -29,3 +29,11 @@ func Test_PermuteUnique(t *testing.T) {
 		ast.Equal(q.ans, permuteUnique(q.para), "输入：%v\n", q)
 	}
 }
+
+func Test_PermuteUniqueV2(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, permuteUniqueV2(q.para), "输入：%v\n", q)
+	}
+}
