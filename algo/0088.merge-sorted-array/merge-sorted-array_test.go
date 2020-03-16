@@ -24,16 +24,15 @@ var qs = []struct {
 	},
 }
 
-func Test_MergeSortedArray(t *testing.T) {
-	ast := assert.New(t)
-
-	for _, q := range qs {
-		fmt.Printf("~~%v~~\n", q)
-		mergeSortedArray(q.para1, q.para2, q.para3, q.para4)
-		ast.Equal(q.ans, q.para1, "输入：%v", q)
-	}
-
-}
+//func Test_MergeSortedArray(t *testing.T) {
+//	ast := assert.New(t)
+//
+//	for _, q := range qs {
+//		fmt.Printf("~~%v~~\n", q)
+//		mergeSortedArray(q.para1, q.para2, q.para3, q.para4)
+//		ast.Equal(q.ans, q.para1, "输入：%v", q)
+//	}
+//}
 
 func Test_MergeSortedArrayNotUseBuiltInLib(t *testing.T) {
 	ast := assert.New(t)
