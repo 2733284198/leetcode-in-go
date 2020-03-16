@@ -1,6 +1,6 @@
 package problem0092
 
-// ListNode export singy-linked list
+// ListNode export single-linked list
 type ListNode struct {
 	Val  int
 	Next *ListNode

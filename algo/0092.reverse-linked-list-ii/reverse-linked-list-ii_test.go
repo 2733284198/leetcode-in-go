@@ -34,7 +34,7 @@ func Test_Problem0092(t *testing.T) {
 				2,
 			},
 			ans{
-				[]int{1, 4, 3, 2, 5},
+				[]int{2, 1, 3},
 			},
 		},
 		question{
