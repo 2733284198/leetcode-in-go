@@ -16,6 +16,29 @@ func myPow(x float64, n int) float64 {
 	}
 }
 
+func myPowV2(x float64, n int) float64 {
+	if n < 0 {
+		return 1.0 / pow(x, -n)
+	}
+
+	return pow(x, n)
+}
+
+func pow(x float64, n int) float64 {
+	if x == 0 {
+		return 0
+	}
+	if n == 0 {
+		return 1
+	}
+	m := pow(x, n>>1)
+	if n&1 == 0 {
+
+		return m * m
+	}
+	return m * m * x
+}
+
 func PowByBuiltInLib(x float64, n int) float64 {
 	return math.Pow(x, float64(n))
 }
