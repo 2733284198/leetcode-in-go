@@ -1,5 +1,9 @@
 # [LeetCode](https://leetcode.com) 的 Go 解答
 
+[![Language](https://img.shields.io/badge/Language-Go-blue.svg)](https://golang.org/)
+[![Build Status](https://www.travis-ci.org/aierui/leetcode-in-go.svg?branch=master)](https://www.travis-ci.org/aierui/leetcode-in-go)
+[![codecov](https://codecov.io/gh/aierui/leetcode-in-go/branch/master/graph/badge.svg)](https://codecov.io/gh/aierui/leetcode-in-go)
+
 
 ## 为什么要学习算法与数据结构
 
