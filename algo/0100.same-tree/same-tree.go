@@ -5,6 +5,7 @@ import "github.com/aierui/leetcode-in-go/kit"
 // TreeNode Definition for a binary tree node.
 type TreeNode = kit.TreeNode
 
+// isSameTree by recursion
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q != nil {
 		return false
