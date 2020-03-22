@@ -28,3 +28,11 @@ func Test_totalNQueens(t *testing.T) {
 		ast.Equal(q.ans, totalNQueens(q.para), "输入：%v\n", q)
 	}
 }
+
+func Test_totalNQueensV2(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, totalNQueensV2(q.para), "输入：%v\n", q)
+	}
+}
