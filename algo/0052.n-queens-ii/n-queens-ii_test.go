@@ -1,13 +1,30 @@
 package problem0052
 
-import "testing"
+import (
+	"fmt"
+	"testing"
 
-func Test_totalNQueens(t *testing.T) {
+	"github.com/stretchr/testify/assert"
+)
 
+var qs = []struct {
+	para int
+	ans  int
+}{
+	{
+		4,
+		2,
+	},
+	{
+		5,
+		10,
+	},
 }
 
-func Benchmark_totalNQueens(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-
+func Test_totalNQueens(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, totalNQueens(q.para), "输入：%v\n", q)
 	}
 }
