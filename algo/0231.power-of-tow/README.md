@@ -1,4 +1,4 @@
-# [142. Power Of Two](https://leetcode-cn.com/problems/power-of-two/
+# [231. Power Of Two](https://leetcode-cn.com/problems/power-of-two/)
 
 ## 题目
 
