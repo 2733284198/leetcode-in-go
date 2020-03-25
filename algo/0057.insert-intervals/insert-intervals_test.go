@@ -40,7 +40,7 @@ var qs = []struct {
 	},
 }
 
-func Test_Merge(t *testing.T) {
+func Test_Insert(t *testing.T) {
 	ast := assert.New(t)
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
@@ -48,8 +48,10 @@ func Test_Merge(t *testing.T) {
 	}
 }
 
-func Benchmark_Merge(b *testing.B) {
+func Benchmark_Insert(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-
+		for _, q := range qs {
+			insert(q.para1, q.para2)
+		}
 	}
 }
