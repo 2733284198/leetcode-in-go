@@ -1,4 +1,4 @@
-# [100. Symmertric Tree](https://leetcode-cn.com/problems/symmetric-tree/)
+# [101. Symmertric Tree](https://leetcode-cn.com/problems/symmetric-tree/)
 
 ## 题目
 
