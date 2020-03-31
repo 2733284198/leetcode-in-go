@@ -16,7 +16,7 @@ func strStrNotUseBuiltInFunc(haystack, needle string) int {
 
 	needLen := len(needle)
 
-	for i := 0; i < len(haystack)-needLen; i++ {
+	for i := 0; i <= len(haystack)-needLen; i++ {
 		if haystack[i:i+needLen] == needle {
 			return i
 		}
