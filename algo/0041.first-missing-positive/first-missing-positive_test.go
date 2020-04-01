@@ -16,7 +16,7 @@ var qs = []struct {
 		3,
 	},
 	{
-		[]int{3, 4, -1, -1},
+		[]int{3, 4, -1, 1},
 		2,
 	},
 	{
@@ -28,7 +28,7 @@ var qs = []struct {
 func Test_FirstMissingPositive(t *testing.T) {
 	ast := assert.New(t)
 	for _, q := range qs {
-		fmt.Printf("~~%v~~", q)
-		ast.Equal(q.ans, firstMissingPositive(q.para), "输入：%v", q)
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, firstMissingPositive(q.para), "输入：%v\n", q)
 	}
 }
