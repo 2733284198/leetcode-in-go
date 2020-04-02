@@ -19,6 +19,10 @@ var qs = []struct {
 		[]int{2, 3},
 		[]int{1, 4},
 	},
+	{
+		[]int{2, 3, 4, 6, 7},
+		[]int{1, 5},
+	},
 }
 
 func Test_MissingTwo(t *testing.T) {
