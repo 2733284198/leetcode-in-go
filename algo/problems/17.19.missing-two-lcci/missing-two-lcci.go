@@ -20,3 +20,24 @@ func missingTwo(nums []int) []int {
 
 	return []int{a, b}
 }
+
+func missingTwoV2(nums []int) []int {
+	nums = append(nums, 1, 2)          // 补两个数
+	for i := 0; i < len(nums)-2; i++ { // 将 原来的 nums 元素设置为复数
+		idx := nums[i]
+		if idx < 0 {
+			idx = -idx
+		}
+		idx -= 1
+		nums[idx] = -nums[idx]
+	}
+
+	var res []int
+	for i, num := range nums {
+		if num >= 0 {
+			res = append(res, i+1)
+		}
+	}
+
+	return res
+}
