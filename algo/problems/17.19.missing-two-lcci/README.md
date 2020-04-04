@@ -1,4 +1,4 @@
-# [237. Delete Node In A Linked List](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/)
+# [1719. Delete Node In A Linked List](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/)
 
 ## 题目
 
