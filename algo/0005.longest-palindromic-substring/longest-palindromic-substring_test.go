@@ -42,3 +42,19 @@ func Test_LongestPalindromeByDp(t *testing.T) {
 		ast.Equal(q.ans, longestPalindromeByDp(q.para), "输入：%v\n", q)
 	}
 }
+
+func Test_LongestPalindromeByDpV2(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, longestPalindromeByDpV2(q.para), "输入：%v\n", q)
+	}
+}
+
+func Test_LongestPalindromeV3(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, longestPalindromeV3(q.para), "输入：%v\n", q)
+	}
+}
