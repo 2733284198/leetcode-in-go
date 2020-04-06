@@ -68,11 +68,13 @@ func longestPalindromeByDp(s string) string {
 			maxStart = i - (max-1)/2
 		}
 	}
-	maxString := ""
-	for i := maxStart; i < maxStart+max; i++ {
-		maxString += string(s[i])
-	}
-	return maxString
+	// maxString := ""
+	// for i := maxStart; i < maxStart+max; i++ {
+	// 	maxString += string(s[i])
+	// }
+	// return maxString
+
+	return s[maxStart : maxStart+max]
 }
 
 func Max(i, j int) int {
