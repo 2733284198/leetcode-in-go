@@ -19,14 +19,18 @@ func minDistance(word1, word2 string) int {
 	// 下面是动态规划的主方法
 	for i := 1; i <= m; i++ {
 		for j := 1; j <= n; j++ {
+
+			//fmt.Printf("word1[i-1] == word2[j-1] i => %v, j => %v  => %v == %v\n", i, j, word1[i-1], word2[j-1])
+
 			if word1[i-1] == word2[j-1] {
-				dp[i][j] = dp[i-1][j-1] // 如果 word1[i-1] 与 word2[i-1]相等
+				dp[i][j] = dp[i-1][j-1] // 如果 word1[i-1] 与 word2[j-1]相等
 			} else {
 				dp[i][j] = dp[i-1][j-1] + 1 // 替换代价
 			}
 			dp[i][j] = min(dp[i][j], dp[i][j-1]+1) // 插入代价
 			dp[i][j] = min(dp[i][j], dp[i-1][j]+1) // 删除代价
 		}
+		//fmt.Println()
 	}
 	return dp[m][n]
 }
