@@ -11,6 +11,7 @@ func Constructor() MyStack {
 	return myStack
 }
 
+// Push O(n)
 /** Push element x onto stack. */
 func (this *MyStack) Push(x int) {
 	this.Element = append(this.Element, x)
@@ -25,6 +26,7 @@ func (this *MyStack) Push(x int) {
 
 }
 
+// Pop O(1)
 /** Removes the element on top of the stack and returns that element. */
 func (this *MyStack) Pop() int {
 	tmp := this.Element[0]
@@ -33,6 +35,7 @@ func (this *MyStack) Pop() int {
 	return tmp
 }
 
+// Top O(1)
 /** Get the top element. */
 func (this *MyStack) Top() int {
 	return this.Element[0]
