@@ -37,6 +37,14 @@
 ## 解题思路
 
 
-思路一：动态规划
+思路一：有限状态机
+
+![](https://pic.leetcode-cn.com/e87dc057b4d26e4b8554b4fb311ffa9df8301ab5f10d3755a1ab115d8cf6c925-image.png)
+
+
+[有限状态机](https://zh.wikipedia.org/zh-hans/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA)
+
+
+
 
 ## 总结
