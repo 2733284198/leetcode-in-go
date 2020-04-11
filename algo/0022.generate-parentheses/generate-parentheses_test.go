@@ -23,7 +23,7 @@ var qs = []struct {
 	},
 }
 
-func Test_GengerateParenthesis(t *testing.T) {
+func Test_GenerateParenthesis(t *testing.T) {
 	ast := assert.New(t)
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
