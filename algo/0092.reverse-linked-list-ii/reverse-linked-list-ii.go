@@ -12,24 +12,24 @@ func reverseBetween(head *ListNode, m, n int) *ListNode {
 	}
 
 	prev, i, j := &ListNode{Next: head}, m, n-m
-
-	d := prev
+	head = prev
 
 	for i > 1 {
-		d = d.Next
+		prev = prev.Next
 		i--
 	}
 
-	cur := d.Next.Next
-	curPre := d.Next
+	cur := prev.Next // m 个节点
 
 	for j > 0 {
-		curPre.Next = cur.Next
-		cur.Next = d.Next
-		d.Next = cur
-		cur = curPre.Next
+
+		temp := cur.Next      // 保存要反转节点的下一个节点
+		cur.Next = temp.Next  // 当前节点指向 要放转节点的 next 节点 最终指向第 n + 1 个节点
+		temp.Next = prev.Next // 反转
+		prev.Next = temp      // 第 m 个节点指向后面一个节点
+
 		j--
 	}
 
-	return prev.Next
+	return head.Next
 }
