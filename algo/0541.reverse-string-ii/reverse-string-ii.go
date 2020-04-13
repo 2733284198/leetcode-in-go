@@ -7,16 +7,16 @@ func reverseStr(s string, k int) string {
 
 	for i := 0; left < l; i++ {
 		left = i * 2 * k
-		right := left +k - 1
+		right := left + k - 1
 
-		if right > l - 1 {
+		if right > l-1 {
 			right = l - 1
 		}
 
 		for left < right {
 			bytes[left], bytes[right] = bytes[right], bytes[left]
-			left ++
-			right --
+			left++
+			right--
 		}
 	}
 
