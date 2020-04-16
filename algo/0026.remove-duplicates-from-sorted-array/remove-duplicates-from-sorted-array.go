@@ -21,3 +21,18 @@ func removeDuplicatesV2(nums []int) int {
 	}
 	return n + 1
 }
+
+func removeDuplicatesV3(nums []int) int {
+	return removeDuplicatesN(nums, 1)
+}
+
+func removeDuplicatesN(nums []int, n int) int {
+	fast, slow := n, n
+	for ; fast < len(nums); fast++ {
+		if nums[fast] != nums[slow-n] {
+			nums[slow] = nums[fast]
+			slow++
+		}
+	}
+	return slow
+}
