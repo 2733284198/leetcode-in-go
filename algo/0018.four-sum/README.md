@@ -1,4 +1,4 @@
-# [86. Four Sum](https://leetcode-cn.com/problems/4sum/)
+# [18. Four Sum](https://leetcode-cn.com/problems/4sum/)
 
 ## 题目
 
