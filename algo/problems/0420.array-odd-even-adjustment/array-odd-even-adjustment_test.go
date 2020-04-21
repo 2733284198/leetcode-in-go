@@ -25,3 +25,11 @@ func Test_ArrayAdjust(t *testing.T) {
 		ast.Equal(q.ans, q.para, "输入：%v\n", q)
 	}
 }
+
+
+func Test_ArrayAdjustV2(t *testing.T) {
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		arrayAdjustV2(q.para)
+	}
+}
