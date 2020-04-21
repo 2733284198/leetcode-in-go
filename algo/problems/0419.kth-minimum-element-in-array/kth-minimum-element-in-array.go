@@ -1,7 +1,7 @@
 package problems0419
 
-func getLeastNumbers(arr []int, k int) []int  {
-	recursiveSort(arr, 0, len(arr) - 1)
+func getLeastNumbers(arr []int, k int) []int {
+	recursiveSort(arr, 0, len(arr)-1)
 
 	return arr[:k]
 }
@@ -20,18 +20,13 @@ func recursiveSort(arr []int, start, end int) {
 	for i := start; i < end; i++ {
 		if arr[i] < pivot {
 			if splitIndex != i {
-				temp := arr[splitIndex]
-
-				arr[splitIndex] = arr[i]
-				arr[i] = temp
+				arr[splitIndex], arr[i] = arr[i], arr[splitIndex]
 			}
-
 			splitIndex++
 		}
 	}
 
-	arr[end] = arr[splitIndex]
-	arr[splitIndex] = pivot
+	arr[end], arr[splitIndex] = arr[splitIndex], pivot
 
 	recursiveSort(arr, start, splitIndex-1)
 	recursiveSort(arr, splitIndex+1, end)
