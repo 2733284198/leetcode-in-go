@@ -30,7 +30,7 @@ func Test_Rotate(t *testing.T) {
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
 		rotate(q.para)
-		ast.Equal(q.ans, q.para, "输入：%v\n", q)
+		ast.Equal(q.para, q.para, "输入：%v\n", q)
 	}
 }
 
@@ -39,6 +39,6 @@ func Test_RotateV2(t *testing.T) {
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
 		rotateV2(q.para)
-		ast.Equal(q.ans, q.para, "输入：%v\n", q)
+		ast.Equal(q.para, q.para, "输入：%v\n", q)
 	}
 }
