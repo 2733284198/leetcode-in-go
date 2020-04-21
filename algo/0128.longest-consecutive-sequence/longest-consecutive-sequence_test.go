@@ -15,6 +15,14 @@ var qs = []struct {
 		[]int{100, 4, 200, 1, 3, 2},
 		4,
 	},
+	{
+		[]int{100, 5, 200, 1, 3, 2},
+		3,
+	},
+	{
+		[]int{100, 5, 200, 1, 3, 2, 4},
+		5,
+	},
 }
 
 func Test_LongestConsecutive(t *testing.T) {
