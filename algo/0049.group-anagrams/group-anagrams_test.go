@@ -16,10 +16,9 @@ var qs = []struct {
 			"eat", "tea", "tan", "ate", "nat", "bat",
 		},
 		[][]string{
-			[]string{"eat", "tea", "ate"},
 			[]string{"tan", "nat"},
 			[]string{"bat"},
-		},
+			[]string{"eat", "tea", "ate"}},
 	},
 }
 
