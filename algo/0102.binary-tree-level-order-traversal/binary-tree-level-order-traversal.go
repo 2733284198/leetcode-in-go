@@ -4,6 +4,22 @@ import "github.com/aierui/leetcode-in-go/kit"
 
 type TreeNode = kit.TreeNode
 
-func levelOrder(root *TreeNode) [][]int {
+var result [][]int
 
+func levelOrder(root *TreeNode) [][]int {
+	result = [][]int{}
+	dfs(root, 0)
+
+	return result
+}
+
+func dfs(root *TreeNode, level int) {
+	if root != nil {
+		if len(result) == level {
+			result = append(result, []int{})
+		}
+		result[level] = append(result[level], root.Val)
+		dfs(root.Left, level+1)
+		dfs(root.Right, level+1)
+	}
 }
