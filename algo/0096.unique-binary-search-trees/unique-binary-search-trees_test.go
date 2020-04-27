@@ -15,6 +15,10 @@ var qs = []struct {
 		3,
 		5,
 	},
+	{
+		10,
+		16796,
+	},
 }
 
 func Test_NumTrees(t *testing.T) {
@@ -22,5 +26,13 @@ func Test_NumTrees(t *testing.T) {
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
 		ast.Equal(q.ans, numTrees(q.para), "输入：%v\n", q)
+	}
+}
+
+func Test_NumTreesByDp(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, numTreesByDp(q.para), "输入：%v\n", q)
 	}
 }
