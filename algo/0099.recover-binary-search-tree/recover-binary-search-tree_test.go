@@ -25,6 +25,8 @@ func Test_RecoverTree(t *testing.T) {
 
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
-		ast.Equal(q.ans, kit.PreIn2Tree(q.para1, q.para2), "输入：%v\n", q)
+		root := kit.PreIn2Tree(q.para1, q.para2)
+		recoverTree(root)
+		ast.Equal(q.ans, kit.Tree2Inorder(root), "输入：%v\n", q)
 	}
 }
