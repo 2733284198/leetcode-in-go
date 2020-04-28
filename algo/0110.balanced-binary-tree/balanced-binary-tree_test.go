@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/aierui/leetcode-in-go/kit"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -28,6 +29,6 @@ func Test_IsBalanced(t *testing.T) {
 	ast := assert.New(t)
 	for _, q := range qs {
 		fmt.Printf("~~%v~~\n", q)
-		ast.Equal(q.ans, isBalanced(q.para1, q.para2), "输入：%v\n", q)
+		ast.Equal(q.ans, isBalanced(kit.PreIn2Tree(q.para1, q.para2)), "输入：%v\n", q)
 	}
 }
