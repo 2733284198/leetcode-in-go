@@ -9,20 +9,20 @@ func minDepth(root *TreeNode) int {
 		return 0
 	}
 
-	return height(root)
-}
+	left := minDepth(root.Left)
+	right := minDepth(root.Right)
 
-func height(node *TreeNode) int {
-	if node == nil {
-		return 0
+	if left == 0 {
+		return right + 1
 	}
 
-	return min(height(node.Left), height(node.Right)) + 1
-}
-
-func min(i, j int) int {
-	if i > j {
-		return j
+	if right == 0 {
+		return left + 1
 	}
-	return i
+
+	if left < right {
+		return left + 1
+	}
+
+	return right + 1
 }
