@@ -6,5 +6,5 @@ type TreeNode = kit.TreeNode
 
 func buildTree(pre, in []int) *TreeNode  {
 	
-	
+	return kit.PreIn2Tree(pre, in)
 }
