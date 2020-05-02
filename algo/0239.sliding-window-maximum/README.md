@@ -40,5 +40,16 @@
 ## 解题思路
 
 
+思路一：Brute force
+
+思路二：BST
+
+思路三：Monotonic Queue
+
+
+参考：https://leetcode-cn.com/problems/sliding-window-maximum/solution/go-shuang-duan-jie-fa-zhu-shi-by-tian-fu-luo/
+
+
+
 
 ## 总结

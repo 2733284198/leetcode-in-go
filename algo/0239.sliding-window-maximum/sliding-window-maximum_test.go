@@ -22,7 +22,7 @@ var qs = []struct {
 func Test_MaxSlidingWindow(t *testing.T) {
 	ast := assert.New(t)
 	for _, q := range qs {
-		fmt.Printf("~~%V~~\n", q)
-		ast.Equal(q.ans, maxslidingWindow(q.para1, q.para2), "输入：%v\n", q)
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, maxSlidingWindow(q.para1, q.para2), "输入：%v\n", q)
 	}
 }
