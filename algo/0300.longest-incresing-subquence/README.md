@@ -24,4 +24,8 @@
 dp[i] = max(dp[i], dp[i] + 1)
 
 
+思路二：贪心 + 二分查找
+
+https://leetcode-cn.com/problems/longest-increasing-subsequence/solution/zui-chang-shang-sheng-zi-xu-lie-by-leetcode-soluti/
+
 ## 总结
