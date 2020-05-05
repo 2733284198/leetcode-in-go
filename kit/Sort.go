@@ -58,3 +58,38 @@ func Selection(nums []int) {
 		nums[i], nums[min] = nums[min], nums[i]
 	}
 }
+
+
+func Quick(nums []int)  {
+	n := len(nums)
+
+	if n<= 1 {
+		return
+	}
+
+	quick(nums, 0, n - 1)
+}
+
+
+func quick(nums []int, start, end int)  {
+	if end < start {
+		return
+	}
+
+	pivot := nums[end]
+	splitIndex := start
+
+	for i := start; i < end; i++ {
+		if nums[i] < pivot {
+			if splitIndex != i {
+				nums[splitIndex], nums[i] = nums[i], nums[splitIndex]
+			}
+			splitIndex ++
+		}
+	}
+
+	nums[end], nums[splitIndex] = nums[splitIndex], pivot
+
+	quick(nums, start, splitIndex - 1)
+	quick(nums, splitIndex + 1, end)
+}
