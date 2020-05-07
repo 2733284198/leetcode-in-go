@@ -21,42 +21,51 @@ type ans struct {
 	one int
 }
 
-var qs = []question{
-	question{
-		para{
-			[]int{3, 2, 1, 5, 6, 4},
-			2,
-		},
-		ans{
-			5,
-		},
+var qs = []struct {
+	para1 []int
+	para2 int
+	ans   int
+}{
+	{
+		[]int{3, 2, 1, 5, 6, 4},
+		2,
+		5,
 	},
-	question{
-		para{
-			[]int{3, 2, 3, 1, 2, 4, 5, 5, 6},
-			4,
-		},
-		ans{
-			4,
-		},
+	{
+		[]int{3, 2, 3, 1, 2, 4, 5, 5, 6},
+		4,
+		4,
 	},
 }
 
-func Test_Problem0215(t *testing.T) {
+func Test_FindKthLargest(t *testing.T) {
 	ast := assert.New(t)
-
 	for _, q := range qs {
-		a, p := q.ans, q.para
-		fmt.Printf("~~%v~~\n", p)
-		ast.Equal(a.one, findKthLargest(p.one, p.two), "输入:%v", p)
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, findKthLargest(q.para1, q.para2), "输入:%v", q)
 	}
 }
 
-func Benchmark_Problem0215(b *testing.B) {
+func Benchmark_FindKthLargest(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		for _, q := range qs {
-			_, p := q.ans, q.para
-			findKthLargest(p.one, p.two)
+			findKthLargest(q.para1, q.para2)
+		}
+	}
+}
+
+func Test_FindKThLargeNumByQuick(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, findKThLargeNumByQuick(q.para1, q.para2), "输入:%v", q)
+	}
+}
+
+func Benchmark_FindKThLargeNumByQuick(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		for _, q := range qs {
+			findKThLargeNumByQuick(q.para1, q.para2)
 		}
 	}
 }

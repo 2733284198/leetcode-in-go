@@ -54,3 +54,33 @@ func (h *maxHeap) Pop() interface{} {
 	*h = (*h)[0 : len(*h)-1]
 	return res
 }
+
+func findKThLargeNumByQuick(nums []int, k int) int {
+	quick(nums, 0, len(nums)-1)
+
+	return nums[len(nums)-k]
+}
+
+func quick(nums []int, start, end int) {
+	if start > end {
+		return
+	}
+
+	pivot := nums[end]
+	splitIndex := start
+
+	for i := start; i < end; i++ {
+		if nums[i] < pivot {
+			if splitIndex != i {
+				nums[splitIndex], nums[i] = nums[i], nums[splitIndex]
+			}
+			splitIndex++
+		}
+	}
+
+	nums[end], nums[splitIndex] = nums[splitIndex], pivot
+
+	quick(nums, start, splitIndex-1)
+	quick(nums, splitIndex+1, end)
+
+}
