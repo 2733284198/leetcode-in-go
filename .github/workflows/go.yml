@@ -36,5 +36,5 @@ jobs:
     - name: Test
       run: bash ./test.sh
 
-    - name: Test
+    - name: Coverage
       run: bash <(curl -s https://codecov.io/bash)
