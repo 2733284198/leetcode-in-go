@@ -21,3 +21,34 @@ func postorderTraversal(root *TreeNode) []int {
 
 	return res
 }
+
+func postorderTraversalByStack(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+
+	slice := make([]int, 0)
+	stack := []*TreeNode{root}
+
+	for len(stack) > 0 {
+		root := stack[len(stack)-1]
+
+		if root.Right != nil {
+			stack = append(stack, root.Right)
+		}
+
+		if root.Left != nil {
+			stack = append(stack, root.Left)
+		}
+
+		if root.Left == nil && root.Right == nil {
+			stack = stack[:len(stack)-1]
+			slice = append(slice, root.Val)
+		}
+
+		root.Left = nil
+		root.Right = nil
+	}
+
+	return slice
+}
