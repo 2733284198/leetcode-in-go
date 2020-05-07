@@ -20,3 +20,29 @@ func preorderTraversal(root *TreeNode) []int {
 
 	return res
 }
+
+func preorderTraversalByStack(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
+
+	slice := make([]int, 0)
+	stack := []*TreeNode{root}
+
+	for len(stack) > 0 {
+		p := stack[len(stack)-1]
+		stack = stack[0 : len(stack)-1]
+		slice = append(slice, p.Val)
+
+		if p.Right != nil {
+			stack = append(stack, p.Right)
+		}
+
+		if p.Left != nil {
+			stack = append(stack, p.Left)
+		}
+
+	}
+
+	return slice
+}

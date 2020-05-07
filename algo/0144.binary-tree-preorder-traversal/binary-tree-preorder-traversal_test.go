@@ -27,3 +27,11 @@ func Test_BinaryTreePreOrderTraversal(t *testing.T) {
 		ast.Equal(q.ans, preorderTraversal(kit.PreIn2Tree(q.para1, q.para2)), "输入：%v\n", q)
 	}
 }
+
+func Test_BinaryTreePreOrderTraversalByStack(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, preorderTraversalByStack(kit.PreIn2Tree(q.para1, q.para2)), "输入：%v\n", q)
+	}
+}
