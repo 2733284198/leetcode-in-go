@@ -1,5 +1,12 @@
 package kit
 
+/*
+* 冒泡排序
+*
+* 时间复杂度 平均 最好 最坏 O(n^2) O(n) O(n^2)
+* 空间复杂度 O(1)
+* 稳定
+ */
 func Bubble(nums []int) {
 	n := len(nums)
 	if n <= 1 {
@@ -20,6 +27,13 @@ func Bubble(nums []int) {
 	}
 }
 
+/*
+* 插入排序
+*
+* 时间复杂度 平均 最好 最坏 O(n^2) O(n) O(n^2)
+* 空间复杂度 O(1)
+* 稳定
+ */
 func Insert(nums []int) {
 	n := len(nums)
 	if n <= 1 {
@@ -40,6 +54,13 @@ func Insert(nums []int) {
 	}
 }
 
+/*
+* 选择排序
+*
+* 时间复杂度 平均 最好 最坏 O(n2) O(n2) O(n2)
+* 空间复杂度 O(1)
+* 不稳定
+ */
 func Selection(nums []int) {
 	n := len(nums)
 	if n <= 1 {
@@ -59,19 +80,24 @@ func Selection(nums []int) {
 	}
 }
 
-
-func Quick(nums []int)  {
+/*
+* 快速排序
+* 时间复杂度 平均 最好 最坏 O(nlog(n)) O(nlog(n)) O(n^2)
+* 空间复杂度 O(nlog(n))
+* 不稳定
+*
+ */
+func Quick(nums []int) {
 	n := len(nums)
 
-	if n<= 1 {
+	if n <= 1 {
 		return
 	}
 
-	quick(nums, 0, n - 1)
+	quick(nums, 0, n-1)
 }
 
-
-func quick(nums []int, start, end int)  {
+func quick(nums []int, start, end int) {
 	if end < start {
 		return
 	}
@@ -84,12 +110,68 @@ func quick(nums []int, start, end int)  {
 			if splitIndex != i {
 				nums[splitIndex], nums[i] = nums[i], nums[splitIndex]
 			}
-			splitIndex ++
+			splitIndex++
 		}
 	}
 
 	nums[end], nums[splitIndex] = nums[splitIndex], pivot
 
-	quick(nums, start, splitIndex - 1)
-	quick(nums, splitIndex + 1, end)
+	quick(nums, start, splitIndex-1)
+	quick(nums, splitIndex+1, end)
+}
+
+/*
+* 归并排序
+* 时间复杂度 平均 最好 最坏 O(nlog(n)) O(nlog(n)) O(nlog(n))
+* 空间复杂度 O(n)
+* 稳定
+*
+ */
+func Merge(nums []int) {
+	n := len(nums)
+	if n <= 1 {
+		return
+	}
+
+	mergeRecursion(nums, 0, n-1)
+}
+
+func mergeRecursion(nums []int, start, end int) {
+	if start >= end {
+		return
+	}
+
+	mid := (start + end) / 2
+
+	mergeRecursion(nums, start, mid)
+	mergeRecursion(nums, mid+1, end)
+
+	merge(nums, start, mid, end)
+}
+
+func merge(nums []int, start, mid, end int) {
+	tmpArr := make([]int, end-start+1)
+
+	i := start
+	j := mid + 1
+	k := 0
+	for ; i <= mid && j <= end; k++ {
+		if nums[i] <= nums[j] {
+			tmpArr[k] = nums[i]
+			i++
+		} else {
+			tmpArr[k] = nums[j]
+			j++
+		}
+	}
+
+	for ; i <= mid; i++ {
+		tmpArr[k] = nums[i]
+		k++
+	}
+	for ; j <= end; j++ {
+		tmpArr[k] = nums[j]
+		k++
+	}
+	copy(nums[start:end+1], tmpArr)
 }
