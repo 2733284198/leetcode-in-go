@@ -23,6 +23,11 @@ var qs = []struct {
 		[]int{1, 5, 3, 4, 6},
 		false,
 	},
+	{
+		[]int{3, 2, 1, 4, 5},
+		[]int{1, 2, 3, 4, 5},
+		true,
+	},
 }
 
 func Test(t *testing.T) {
