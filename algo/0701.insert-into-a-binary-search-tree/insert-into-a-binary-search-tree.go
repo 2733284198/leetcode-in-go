@@ -20,3 +20,31 @@ func insertIntoBST(root *TreeNode, val int) *TreeNode {
 
 	return root
 }
+
+func insertBSTItera(root *TreeNode, val int) *TreeNode {
+	if root == nil {
+		return &TreeNode{Val: val}
+	}
+
+	r := root
+
+	for {
+		if r.Val > val {
+			if r.Left == nil {
+				r.Left = &TreeNode{Val: val}
+				break
+			} else {
+				r = r.Left
+			}
+		} else {
+			if r.Right == nil {
+				r.Right = &TreeNode{Val: val}
+				break
+			} else {
+				r = r.Right
+			}
+		}
+	}
+
+	return root
+}

@@ -40,3 +40,13 @@ func Test_InsertIntoBST(t *testing.T) {
 		ast.Equal(tree, insertIntoBST(root, q.para3), "输入：%v\n", q)
 	}
 }
+
+func Test_InsertIntoBSTItera(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		root := kit.PreIn2Tree(q.para1, q.para2)
+		tree := kit.PreIn2Tree(q.ans1, q.ans2)
+		ast.Equal(tree, insertBSTItera(root, q.para3), "输入：%v\n", q)
+	}
+}
