@@ -36,3 +36,11 @@ func Test_KthSmallest(t *testing.T) {
 		ast.Equal(q.ans, kthSmallest(kit.PreIn2Tree(q.para1, q.para2), q.para3), "输入：%v\n", q)
 	}
 }
+
+func Test_KthSmallestItera(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		ast.Equal(q.ans, kthSmallestItera(kit.PreIn2Tree(q.para1, q.para2), q.para3), "输入：%v\n", q)
+	}
+}

@@ -16,6 +16,8 @@ func kthSmallest(root *TreeNode, k int) int {
 	return nums[k-1]
 }
 
+// Time O(N)
+// Space O(N)
 func tree2Inorder(root *TreeNode) []int {
 	if root == nil {
 		return nil
@@ -28,6 +30,24 @@ func tree2Inorder(root *TreeNode) []int {
 	result := tree2Inorder(root.Left)
 	result = append(result, root.Val)
 	result = append(result, tree2Inorder(root.Right)...)
+
+	return result
+}
+
+func kthSmallestItera(root *TreeNode, k int) int {
+	var result int
+	stack := make([]*TreeNode, 0)
+	for k > 0 {
+		for root != nil {
+			stack = append(stack, root)
+			root = root.Left
+		}
+		k--
+		root = stack[len(stack)-1]
+		result = root.Val
+		stack = stack[:len(stack)-1]
+		root = root.Right
+	}
 
 	return result
 }
