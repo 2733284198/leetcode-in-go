@@ -17,11 +17,7 @@ func findKthLargest(nums []int, k int) int {
 	h := &temp
 	heap.Init(h)
 
-	if k == 1 {
-		return (*h)[0]
-	}
-
-	for i := 1; i < k; i++ {
+	for i := 0; i < k-1; i++ {
 		heap.Remove(h, 0)
 	}
 
