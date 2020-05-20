@@ -122,3 +122,20 @@ func Benchmark_Heap(b *testing.B) {
 		}
 	}
 }
+
+func Test_Shell(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		Shell(q.para)
+		ast.Equal(q.ans, q.para, "输入：%v\n", q)
+	}
+}
+
+func Benchmark_Shell(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		for _, q := range qs {
+			Shell(q.para)
+		}
+	}
+}
