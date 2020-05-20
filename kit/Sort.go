@@ -175,3 +175,47 @@ func merge(nums []int, start, mid, end int) {
 	}
 	copy(nums[start:end+1], tmpArr)
 }
+
+/**
+* 堆排序
+*
+* 时间复杂度 平均 最好 最坏 O(nlog(n)) O(nlog(n)) O(nlog(n))
+* 空间复杂度 O(1)
+*
+* 不稳定
+*
+ */
+func Heap(nums []int) {
+	n := len(nums)
+	if n <= 1 {
+		return
+	}
+	h := (n - 1) >> 1
+	for i := h; i >= 0; i-- {
+		heap(nums, i, n-1)
+	}
+
+	for i := n - 1; i > 0; i-- {
+		nums[0], nums[i] = nums[i], nums[0]
+		heap(nums, 0, i-1)
+	}
+}
+
+func heap(nums []int, start, end int) {
+	left := start*2 + 1
+	right := left + 1
+
+	if left > end {
+		return
+	}
+
+	tmp := left
+	if right <= end && nums[right] > nums[left] {
+		tmp = right
+	}
+
+	if nums[tmp] > nums[start] {
+		nums[start], nums[tmp] = nums[tmp], nums[start]
+		heap(nums, tmp, end)
+	}
+}

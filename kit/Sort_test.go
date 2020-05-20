@@ -105,3 +105,20 @@ func Benchmark_Merge(b *testing.B) {
 		}
 	}
 }
+
+func Test_Heap(t *testing.T) {
+	ast := assert.New(t)
+	for _, q := range qs {
+		fmt.Printf("~~%v~~\n", q)
+		Heap(q.para)
+		ast.Equal(q.ans, q.para, "输入：%v\n", q)
+	}
+}
+
+func Benchmark_Heap(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		for _, q := range qs {
+			Heap(q.para)
+		}
+	}
+}
