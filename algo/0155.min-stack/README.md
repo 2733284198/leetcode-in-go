@@ -28,5 +28,6 @@ minStack.getMin();   --> 返回 -2.
 ## 解题思路
 
 
+![](https://assets.leetcode-cn.com/solution-static/155/155_fig1.gif)
 
 ## 总结

@@ -17,12 +17,12 @@ func Test(t *testing.T) {
 	// [-2, 0]
 	s.Push(-3)
 	// [-2, 0, -3]
-	ast.Equal(-3, s.GetMin(), "get min from [-2, 0, -3]")
+	ast.Equal(-3, s.GetMin(), "get minStack from [-2, 0, -3]")
 	// [-2, 0, -3]
 	s.Pop()
 	// [-2, 0]
 	ast.Equal(0, s.Top(), "get top from [-2, 0]")
 	// [-2, 0]
-	ast.Equal(-2, s.GetMin(), "get min from [-2, 0]")
+	ast.Equal(-2, s.GetMin(), "get minStack from [-2, 0]")
 	// [-2, 0]
 }
