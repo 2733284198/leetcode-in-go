@@ -1,6 +1,11 @@
 package problem0118
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 var qs = []struct {
 	para int
@@ -19,5 +24,21 @@ var qs = []struct {
 }
 
 func Test_Generate(t *testing.T) {
+	ast := assert.New(t)
+
+	for _, q := range qs {
+		fmt.Printf("~~%v~~", q)
+		ast.Equal(q.ans, generate(q.para), "输入：%v\n", q)
+	}
+
+}
+
+func Test_GenerateByDp(t *testing.T) {
+	ast := assert.New(t)
+
+	for _, q := range qs {
+		fmt.Printf("~~%v~~", q)
+		ast.Equal(q.ans, generateByDp(q.para), "输入：%v\n", q)
+	}
 
 }
