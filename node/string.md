@@ -140,3 +140,8 @@ func indexRabinKarp(s, substr string) int {
 - https://www.ruanyifeng.com/blog/2013/05/boyer-moore_string_search_algorithm.html
 
 ### Sunday
+
+参考
+
+- http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/sundayen.htm
+- https://www.jianshu.com/p/2e6eb7386cd3
