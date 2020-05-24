@@ -96,6 +96,8 @@ func indexRabinKarp(s, substr string) int {
 	for i := 0; i < n; i++ {
 		h = h*primeRK + uint32(s[i])
 	}
+	// 这里为啥需要拆开呢 ？
+	// 可以直接 从 0 到 len(s) 循环遍历吗？
 	if h == hashss && s[:n] == substr {
 		return 0
 	}
