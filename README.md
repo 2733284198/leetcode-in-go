@@ -16,7 +16,7 @@
 
 ## 如何有效学习和训练算法与数据结构
 
-@todo summary this part begining
+多练习，多动手，常规技巧熟记～多看别人优秀的代码
 
 - Chunk it up（切碎知识点）
 - Deliberate practicing（刻意练习）
