@@ -22,7 +22,6 @@
 - Chunk it up（切碎知识点）
 - Deliberate practicing（刻意练习）
 - Feedback (获得反馈)
-- 难
 
 ## 数据结构
 
